@@ -1,4 +1,7 @@
-#import random
+import random
+import os
+
+os.system('cls')
 #print("Oi mundo") # aula 1 
 # O terminador de comando do python são os Enter's/quebra de linha
 # entretanto se quiser mais de um comando na mesma linha, devesse
@@ -85,5 +88,140 @@ list.append("x") -> adiciona elemento na lista
 list.remove("Palio")
 list.pop("")
 list.clear()
+
+
+
+ # Aula sobre IF e Else
+
+a = 100
+b = 10
+res = 0 
+op = "/"
+
+if op =="+":
+    res = a+b
+
+elif op =="-":
+    res = a-b
+
+elif op =="*":
+    res = a*b
+
+elif op =="/":
+    res = a/b
+
+else:
+    print("Erro!")
+
+
+print (str(a) + op + str(b) + "=" + str(res))
+
+
+
+
+clima = "sol"
+dinheiro = 299
+lugar =""
+
+if clima == "sol" and (dinheiro > 300 and dinheiro<500): # todas as condições tem que ser verdadeiras para ser aceito
+    lugar = "clube"
+else:
+    lugar = "cinema"
+
+print (lugar)
+
+# and -> todas as condições tem que ser verdadeiras
+# or -> se uma das condições for verdadeira, executa
+
+
+
+
+# LOOPS (FOR E WHILE )
+
+carros = ["jeep","gol","camaro","ford","honda"]
+
+for x in carros: #informa a variavel que vai servir de indice e informa a lista que vai percorrer
+    print(x)
+    if(x=="camaro"):
+        break #encerra o loop
+        print("vw")
+
+while (teste logico): # while precisa de um teste logico para indicar se ele continua a execução enquanto retornar verdadeiro
+    comando 1
+    comando 2
+    comando x
+i = 0
+while i<9:
+    print(i)
+    i+=1
+
+
+
+nome = input("Digite Nome: ") # input captura dados digitados por usuario
+print(nome+" digitado")
+
+
+
+# LIST
+# TUPLAS -> NAO TEM METODOS PARA MODIFICAÇÕES
+
+tupla=(1,2,3,4,5)
+
+lista = list(tupla) # converte tupla para lista
+
+lista[2]=100
+
+tupla = tuple(lista)# converte lista para tupla
+
+for x in tupla:
+    print(x)
+
+
+
+#  MATRIZES -> uma lista dentro de outra lista
+
+Arrey = [
+            [0,1]#
+        ,   [2,3]#
+        ,   [4,5]#
+]
+
+for l,c in Arrey:
+    print(str(l) +" "+str(c))
+
 """
 
+# Dictionary-> Usa mesmo sistema que o json, de chave e valor
+ 
+dicionario = {
+        "nome":"valor"
+    ,   "Operacao":"B.I"
+    ,   "cor":"Azul Escuro"
+}
+
+dicionario2={
+    "pessoa1":{
+        "nome":"fulano",
+        "idade":"21"
+    },
+    "pessoa2":{
+        "nome":"fulano",
+        "idade":"21"
+    },
+    "pessoa3":{
+        "nome":"fulano",
+        "idade":"21"
+    }
+}
+
+#print(dicionario)
+#cor = dicionario["cor"]
+#op = dicionario.get("Operacao")
+#print(dicionario["cor"] + " , "+ op)
+
+#for x in dicionario:
+    #print(x) #chaves
+ #   print(dicionario[x]) # valores
+
+for x,y  in dicionario.items():
+    print(x +":"+y)
