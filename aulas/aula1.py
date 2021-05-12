@@ -189,7 +189,7 @@ Arrey = [
 for l,c in Arrey:
     print(str(l) +" "+str(c))
 
-"""
+
 
 # Dictionary-> Usa mesmo sistema que o json, de chave e valor
  
@@ -225,3 +225,11 @@ dicionario2={
 
 for x,y  in dicionario.items():
     print(x +":"+y)
+"""
+
+# Funções (def)
+
+    def somar (): 
+        print("Desafio Bemol Treinee")
+
+    somar()
