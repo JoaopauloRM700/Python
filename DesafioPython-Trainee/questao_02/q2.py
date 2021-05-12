@@ -1,0 +1,1 @@
+#2. Qual o ranking de estados por média de PIB per capita no ano de 2010?

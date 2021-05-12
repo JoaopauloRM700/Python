@@ -225,11 +225,76 @@ dicionario2={
 
 for x,y  in dicionario.items():
     print(x +":"+y)
-"""
+
 
 # Funções (def)
+# toda alterção na função sera considerada quando ela for chamada
+def subtrair():
+    res = n1-n2
+    print(res)
 
-    def somar (): 
-        print("Desafio Bemol Treinee")
-
+def calculos():
     somar()
+    subtrair()
+
+calculos()
+
+# FUNÇÕES QUE RECEBEM VALORES DE ENTRADA
+
+def somar(*n): 
+    r = 0
+    for x in n:
+        r+=x
+
+    print(r)
+
+def textos(*t):# *n -> qauntidade qualquer de elementos 
+    print(t[0])
+    for x in t:
+        print(x)
+
+
+textos("Bemol","Treinee","Python")
+somar(1,2,3)
+
+
+# FUNÇÕES QUE RETORNAM VALORES  
+
+def somar(*n): 
+    r = 0
+    for x in n:
+        r+=x
+    return r
+
+
+print(somar(1,2,3,4,5,6,7,8,9))
+
+
+
+# lambda -> função simples e anonima
+
+soma = lambda a,b: a+b
+exp = lambda a,b,c: (a+b)*c
+
+print((lambda a,b: a+b)(1,2))
+r=soma(1,2)
+
+print(r)
+print(soma(3,4))
+print(exp(1,2,4))
+
+res = lambda x,func: x + func(x)
+resp = res(2,lambda x: x*x)
+print(resp)
+
+
+"""
+
+# TRY EXCEPTI
+
+try
+
+
+except # Executa se o try retornar erro
+
+finally # Executa se o try retornar erro ou não
