@@ -288,13 +288,55 @@ resp = res(2,lambda x: x*x)
 print(resp)
 
 
-"""
+
 
 # TRY EXCEPTI
+x=10
+try:
 
-try
+    print(x)
+
+except:
+    print("Erro!")
+else:
+    print("Tudo certo")
+
+#except NameError: # Executa se o try retornar erro
+#    print("Variavel nao inicializada")
+finally: # Executa se o try retornar erro ou nao
+    print("Fim Tratamento")
 
 
-except # Executa se o try retornar erro
+num="Joao"
+if not type(num) is int:
+    raise Exception("Valor nao permitido")
 
-finally # Executa se o try retornar erro ou não
+#LER, CRIAR E MODIFICAR ARQUIVOS
+
+'r' read -> Usando somente para ler algo
+'w' write -> Usado somente para escrever algo
+'r+' -> Usado para ler e escrever algo
+'a' append -> Usado para acrescentar algo
+'x' create -> criar
+'t' text ->
+'b' binario 
+
+
+
+arq=open('D:/workspace/python/aulas/teste.txt','r')
+arq.write ("\n Treinee bemol 1")
+arq.close()
+
+arq=open('D:/workspace/python/aulas/teste.txt','rt')
+
+#print(arq.read())
+#print(arq.readline())
+#print(arq.readline())
+
+for l in arq:
+    print(l)
+
+arq.close()
+
+"""
+#os.remove('D:/workspace/python/aulas/teste.txt')
