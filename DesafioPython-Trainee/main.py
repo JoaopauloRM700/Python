@@ -12,23 +12,38 @@ LER, CRIAR E MODIFICAR ARQUIVOS
 
 
 """
+lista= []
 
 # Leitura do Arquivo, utilizando o encoding para processar os caracteres especiais 
-with open('D:/workspace/python/DesafioPython-Trainee/dataset/pib_municipio_2010_a_2018.txt','r',encoding='utf-8') as dataset: 
-   data = dataset.read()
+with open('D:/workspace/python/DesafioPython-Trainee/dataset/pib_municipio_2010_a_2018.txt','rt',encoding='utf-8') as dataset: 
+   for l  in dataset:
+      data = dataset.readline()
+      data = data.split(';')
+      lista.append(data)
 
-""" # Replace ; por ,
-data = data.replace(';', ',')
+x = 0
+tamanho = len(lista) 
+""" while x < tamanho:
+   print(lista[x])
+   x+=1 """
 
 #Reescrevo no documento
-with open('D:/workspace/python/DesafioPython-Trainee/dataset/pib_municipio_2010_a_2018.txt','w',encoding='utf-8') as dataset: 
-   dataset.write(data)
- """
+with open('D:/workspace/python/DesafioPython-Trainee/dataset/pib_municipio_2010_a_2018.txt','wt',encoding='utf-8') as dataset: 
+      dataset.write(str(lista))
+ 
 
-#Substituir ; por , 
-""" with open('D:/workspace/python/DesafioPython-Trainee/dataset/pib_municipio_2010_a_2018.txt','r+',encoding='utf-8') as dataset: 
-    for x in dataset:
-        dataset.write (x.replace(";",","))
-         """
+""" data = data.split(";")
+print(data)
+# Replace ; por ,
+
+for l in data:
+   data = data.split(';')
+
+#Reescrevo no documento
+with open('D:/workspace/python/DesafioPython-Trainee/dataset/pib_municipio_2010_a_2018.txt','wt',encoding='utf-8') as dataset: 
+   for l in data:
+      dataset.write(l) """
+
+
 
 dataset.close()
