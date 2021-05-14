@@ -36,10 +36,11 @@ print(mediaPib)
 # Prova Real dos Calculos da Primeira Questão
 """
 
-with open('D:/workspace/python/DesafioPython-Trainee/questao_01/saida_q1.txt','wt',encoding='utf-8') as dataset: 
+with open('D:/workspace/python/DesafioPython-Trainee/questao_01/saida_q1.txt','wt',encoding='utf-8') as q1: 
    dataset.write(str(mediaPib)+" foi o valor médio de PIB per capita da cidade de Manaus no período que abrange a base de dados")
 
 dataset.close()
+q1.close()
 
 
 
