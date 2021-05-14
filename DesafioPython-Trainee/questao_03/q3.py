@@ -16,23 +16,44 @@ with open('D:/workspace/python/DesafioPython-Trainee/dataset/pib_municipio_2010_
 x = 0
 tamanho = len(lista) 
 qt = 0
-pib = 0 
+vladcbruto = 0 
+vladcbrutoTotal = 0
 MedBruto18 = []
+
 while x < tamanho:
     #print(lista[x])
     if lista[x][1] == "AM" and lista[x][0]=="2018":
         #print(lista[x][0]+":"+lista[x][13])
         MedBruto18.append(float(lista[x][8]))
-        pib += float(lista[x][8])
+        vladcbruto += float(lista[x][8])
         qt+=1
     x+=1
-BMed2018 = pib / qt
+#BMedServc = vladcbruto / qt
 BMed18 = sum(MedBruto18)/len(MedBruto18)
 
-print(str(BMed2018)+" : "+str(BMed18))
+print(BMed18)
 
-   
+MedBrutoTotal=[]
+x = 0
+tamanho = len(lista) 
+qt = 0
+vladcbruto = 0 
+vladcbrutoTotal = 0
 
+while x < tamanho:
+    #print(lista[x])
+    if lista[x][1] == "AM" and lista[x][0]=="2018":
+        #print(lista[x][0]+":"+lista[x][13])
+        MedBrutoTotal.append(float(lista[x][10]))
+        vladcbrutoTotal += float(lista[x][10])
+        qt+=1
+    x+=1
 
+#BMedtotal1 = vladcbrutoTotal / qt
+BMedtotal2= sum(MedBrutoTotal)/len(MedBrutoTotal)
+print(BMedtotal2)
 
+prop = BMed18/BMedtotal2
+
+print(str(prop)+" ou "+str(prop*100)+"% em Porcentagem")
 dataset.close()

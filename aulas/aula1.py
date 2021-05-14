@@ -357,5 +357,5 @@ with open('D:/workspace/python/DesafioPython-Trainee/dataset/pib_municipio_2010_
 
 texto = "Ano,Sigla da Unidade da Federação,Nome da Unidade da Federação,Nome do Município,Nome da Região Geográfica Intermediária,Hierarquia Urbana,Valor adicionado bruto da Agropecuária a preços correntes (R$ 1.000),Valor adicionado bruto da Indústria a preços correntes (R$ 1.000),Valor adicionado bruto dos Serviços a preços correntes (R$ 1.000),Valor adicionado bruto da Administração a preços correntes (R$ 1.000),Valor adicionado bruto total a preços correntes (R$ 1.000),Impostos, líquidos de subsídios, sobre produtos a preços correntes (R$ 1.000),Produto Interno Bruto a preços correntes (R$ 1.000),Produto Interno Bruto per capita a preços correntes (R$ 1.00)"
 txt = texto.split(",")
-print(txt[8])
+print(txt[10])
 print(len(txt))
