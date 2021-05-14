@@ -17,27 +17,29 @@ with open('D:/workspace/python/DesafioPython-Trainee/dataset/pib_municipio_2010_
      
 x = 0
 tamanho = len(lista) 
-qt = 0
-pib = 0 
-
+#qt = 0
+#pib = 0 
+pibs = []
 
 while x < tamanho:
    #print(lista[x])
    if lista[x][3] == "Manaus":
-      print(lista[x][0]+":"+lista[x][13])
-      pib += float(lista[x][13])
-      qt+=1
+      #print(lista[x][0]+":"+lista[x][13])
+      pibs.append(float(lista[x][13]))
+      #pib += float(lista[x][13])
+      #qt+=1
    x+=1
-mediaPib = pib / qt
-""" 
-print(pib)
-print(qt)
-print(mediaPib) 
+#mediaPib = pib / qt
+mediaMA = sum(pibs) / len(pibs)
+#print(pib)
+#print(qt)
+print(mediaMA)
+#print(mediaPib) 
 # Prova Real dos Calculos da Primeira Questão
-"""
+
 
 with open('D:/workspace/python/DesafioPython-Trainee/questao_01/saida_q1.txt','wt',encoding='utf-8') as q1: 
-   dataset.write(str(mediaPib)+" foi o valor médio de PIB per capita da cidade de Manaus no período que abrange a base de dados")
+   q1.write(str(mediaMA)+" foi o valor médio de PIB per capita da cidade de Manaus no período que abrange a base de dados")
 
 dataset.close()
 q1.close()

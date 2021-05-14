@@ -14,23 +14,23 @@ x = 0
 tamanho = len(lista) 
 qt = 0
 pib = 0 
+pibs = []
 
 def MediaEstado(estado):
    x=0
    qt = 0
    pib = 0 
    while x < tamanho:
-      #print(lista[x])
-      if lista[x][1] == estado and lista[x][0]=="2010":
+      if lista[x][0]=="2010" and lista[x][1] == estado:
          #print(lista[x][0]+":"+lista[x][13])
          pib += float(lista[x][13])
+         pibs.append(float(lista[x][13]))
          qt+=1
       x+=1
    mediaPib = pib / qt
-   listaPib = [mediaPib,"ESTADO:"+estado+" PIB:"+str(mediaPib)]
+   #mediaEst = sum(pibs)/len(pibs)
+   listaPib = [mediaPib,"ESTADO:"+estado+" | PIB:"+str(mediaPib)]
    return listaPib 
-   """ print(mediaPib)
-   print("PIB:"+str(mediaPib)+" Estado:"+estado) """
    
 
 estados =["RO","AC","AM","RR","PA","AP","TO","MA","PI","CE","RN","PB","PE","AL","SE","BA","MG","ES","RJ","SP","SC","RS","MT","GO","DF"]
@@ -41,10 +41,6 @@ while est < tamEst:
    est+=1
 
 
-""" MedPibEstados.append(MediaEstado("RO"))
-MedPibEstados.append(MediaEstado("AC"))
-MedPibEstados.append(MediaEstado("AM"))
-MedPibEstados.append(MediaEstado("RR")) """
 
 print(len(estados))
 rank = sorted(MedPibEstados, reverse=True)
