@@ -22,16 +22,16 @@ MedBruto18 = []
 
 while x < tamanho:
     #print(lista[x])
-    if lista[x][1] == "AM" and lista[x][0]=="2018":
+    if lista[x][1] == "AM" and lista[x][0]=="2018":  # Extraio a media dos serviços 
         #print(lista[x][0]+":"+lista[x][13])
         MedBruto18.append(float(lista[x][8]))
         vladcbruto += float(lista[x][8])
         qt+=1
     x+=1
 #BMedServc = vladcbruto / qt
-BMed18 = sum(MedBruto18)/len(MedBruto18)
+BMedserv18 = sum(MedBruto18)/len(MedBruto18)
 
-print(BMed18)
+#print(BMed18)
 
 MedBrutoTotal=[]
 x = 0
@@ -42,7 +42,7 @@ vladcbrutoTotal = 0
 
 while x < tamanho:
     #print(lista[x])
-    if lista[x][1] == "AM" and lista[x][0]=="2018":
+    if lista[x][1] == "AM" and lista[x][0]=="2018": # Extraio a media do valor adicionado total 
         #print(lista[x][0]+":"+lista[x][13])
         MedBrutoTotal.append(float(lista[x][10]))
         vladcbrutoTotal += float(lista[x][10])
@@ -51,9 +51,14 @@ while x < tamanho:
 
 #BMedtotal1 = vladcbrutoTotal / qt
 BMedtotal2= sum(MedBrutoTotal)/len(MedBrutoTotal)
-print(BMedtotal2)
+#print(BMedtotal2)
 
-prop = BMed18/BMedtotal2
+prop = BMedserv18/BMedtotal2 # Calculo de porporcão
 
-print(str(prop)+" ou "+str(prop*100)+"% em Porcentagem")
+#print("A proporção foi de "+str(prop)+" ou "+str(prop*100)+"% em Porcentagem")
+
+with open('D:/workspace/python/DesafioPython-Trainee/questao_03/saida_q3.txt','wt',encoding='utf-8') as q3: 
+   q3.write("A proporção foi aproximadamente de "+str(round(prop,5))+" ou "+str(round(prop*100 , 2))+"% em Porcentagem")
+#round para ficar visivelmente mais agradavel
 dataset.close()
+q3.close()

@@ -2,8 +2,8 @@
 import os
 os.system('cls')
 lista= []
-MedPibEstados = []
-   # Leitura do Arquivo, utilizando o encoding para processar os caracteres especiais 
+MedPibEstados = [] # Esse list virara uma Matriz para classificação do estados
+   # Leitura e tratamento do Arquivo, utilizando o encoding para processar os caracteres especiais e o split para trasformar o texto em matriz 
 with open('D:/workspace/python/DesafioPython-Trainee/dataset/pib_municipio_2010_a_2018.txt','rt',encoding='utf-8') as dataset: 
    for l  in dataset:
       data = dataset.readline()
@@ -21,7 +21,7 @@ def MediaEstado(estado):
    qt = 0
    pib = 0 
    while x < tamanho:
-      if lista[x][0]=="2010" and lista[x][1] == estado:
+      if lista[x][0]=="2010" and lista[x][1] == estado:  #Loop com condicional para extrair os dados necesarios 
          #print(lista[x][0]+":"+lista[x][13])
          pib += float(lista[x][13])
          pibs.append(float(lista[x][13]))
@@ -29,7 +29,7 @@ def MediaEstado(estado):
       x+=1
    mediaPib = pib / qt
    #mediaEst = sum(pibs)/len(pibs)
-   listaPib = [mediaPib,"ESTADO:"+estado+" | PIB:"+str(mediaPib)]
+   listaPib = [mediaPib,"ESTADO:"+estado+" | PIB:"+str(mediaPib)] # retorno uma lista com duas informações, a media em float e a String com Estado + PIB
    return listaPib 
    
 
@@ -43,7 +43,7 @@ while est < tamEst:
 
 
 print(len(estados))
-rank = sorted(MedPibEstados, reverse=True)
+rank = sorted(MedPibEstados, reverse=True) #Realizo o rank, o sorted ordena pela primeira coluna da matriz, e coloco de forma reversa para ser o maior para o menor
 print(rank)
 #print(MedPibEstados)
 tamRank = len(rank)
