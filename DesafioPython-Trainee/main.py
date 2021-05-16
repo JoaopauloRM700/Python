@@ -11,6 +11,9 @@ LER, CRIAR E MODIFICAR ARQUIVOS
 
 """
 
+#NOME COMPLETO: JOAO PAULO REIS MARQUES
+#EMAIL'S: joaopaulo-rm@hotmail.com | joaopaulo.rm7@gmail.com
+
 
 lista= []
    # Leitura do Arquivo, utilizando o encoding para processar os caracteres especiais 
