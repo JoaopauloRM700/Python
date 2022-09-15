@@ -22,7 +22,7 @@ y = "Oi Mundo" # String 'str'
 valor = 1.5 #float
 booleano = True #True or False, bool
 n1 = 5; n2 = 2; var = complex(1j) # Numeros complexos
-lista = ["casa", "carro","PC","Internet", 1., 58.3] # Arrey
+lista = ["casa", "carro","PC","Internet", 1., 58.3] # Arrey - list
 lista = ("casa", "carro","PC","Internet", 1., 58.3) #Tupla, não é possivel substituir elementos
 rage = range(0,100) #cria elementos de 1 a 100
 dicio = { # Dictionary
@@ -43,7 +43,8 @@ print("Tipo: "+str(type(lista))) # type retorna o tipo de dados do objeto
 
 """
 """
-len(list) -> tamanho do arrey
+len(list) -> tamanho do ar
+rey
 strip -> retira espaços do inicio e do fim
 lower -> converte a string para minusculo
 upper -> converte a string para maiusculo 
@@ -67,7 +68,7 @@ frase2 = ",mas lutar sempre"
 
 fraseCompleta= frase1+" "+frase2
 
-#res ="Pain" in frase #procura palavra em uma frase
+# res ="Pain" in frase #procura palavra em uma frase
 print(fraseCompleta)
 
 # String format 
