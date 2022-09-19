@@ -95,7 +95,7 @@ sejam individualizados, como no código abaixo:
       se o valor 3(três) for informado como entrada e armazenado na variável número.
       R= Ele vai imprimir 333, por considerar a entrada uma String
       
-      """
+"""
 
 
 
