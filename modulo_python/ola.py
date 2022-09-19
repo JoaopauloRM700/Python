@@ -32,6 +32,26 @@ print(tv.get("preco"))
 import os
 
 
-entrada = input()
-print(entrada)
+nota1= int(input())
+peso1 = int(input())
+nota2= int(input())
+peso2 = int(input())
+nota3 = int(input())
+peso3 = int(input())
 
+
+Media = (nota1+nota2+nota3)/3
+
+if nota1 >=0:
+    executa:True
+if nota2 >=0:
+    executa:True
+if nota3 >=0:
+    executa:True
+
+if executa == True:
+    Media = (nota1+nota2+nota3)/3
+
+
+
+    
