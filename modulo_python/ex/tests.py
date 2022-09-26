@@ -49,9 +49,13 @@ class TestCpf(object):
         cpf = '034.974.762-856'
         assert v.validatecpf(cpf) == False
 
-    def test_dig_verificadores(self):
+    def test_dig_verificador1(self):
         v = ValidateCPF
-        cpf = '034.974.762-58'
+        cpf = '034.974.762-55'
+        assert v.validatecpf(cpf) == False
+    def test_dig_verificador2(self):
+        v = ValidateCPF
+        cpf = '034.974.762-83'
         assert v.validatecpf(cpf) == False
 
     def test_dig_verificadores_validos(self):
