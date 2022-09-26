@@ -2,7 +2,7 @@
 import re
 
 
-def validate(cpf: str) -> bool:
+def validatecpf(cpf: str) -> bool:
 
     """ Efetua a validação do CPF, tanto formatação quando dígito verificadores.
 
@@ -51,7 +51,3 @@ def validate(cpf: str) -> bool:
 
     return True
 
-
-cpf= input("CPF: (000.000.000 )")
-
-print(validate(cpf))
