@@ -16,7 +16,7 @@ import ValidateCPF, ValidateEmail
 
 class TestCpf(object):
     def test_cpf_valido(self):
-        v = ValidateEmail
+        v = ValidateCPF
         cpf = '034.974.762-85'
         assert v.validatecpf(cpf) == True
 
@@ -62,6 +62,7 @@ class TestCpf(object):
         v = ValidateCPF
         cpf = '034.974.762_85'
         assert v.validatecpf(cpf) == False
+
         cpf = '034.974.762a85'
         assert v.validatecpf(cpf) == False
 
@@ -74,19 +75,100 @@ class TestCpf(object):
         v = ValidateCPF
         cpf = ''
         assert v.validatecpf(cpf) == False
-       
+   
 class TestEmail(object):
 
     def test_email_valido(self):
         v = ValidateEmail
         email = 'joaopaulorm7@gmail.com'
-        assert v.validatecpf(email) == True
+        assert v.ValidateEmail(email) == True
+    
+    def test_email_em_branco():
+        v = ValidateEmail
+        email = ''
+        assert v.ValidateEmail(email) == False
+"""
+    def test_email_com_espaco():
+        #Os e-mails podem conter espaço na parte do nome, desde que sejam citados
+        v = ValidateEmail
+        email = 'joao paulo@gmail.com'
+        assert v.ValidateEmail(email) == False
 
-    def test_email_em_branco():
+        email = '"joao paulo"@gmail.com'
+        assert v.ValidateEmail(email) == True
+
+    def test_email_com_1subdominio():
+        #Teste se e-mails muito curtos são capturados adequadamente
         v = ValidateEmail
-        email = ''
-        assert v.validatecpf(email) == False
-    def test_email_em_branco():
+        email = 'joaopaulo@gmail'
+        assert v.ValidateEmail(email) == False
+
+    def test_email_final_invalido():
         v = ValidateEmail
-        email = ''
-        assert v.validatecpf(email) == False
+        email = 'joaopaulo@gmail.com.'
+        assert v.ValidateEmail(email) == False
+
+        email = 'joaopaulo@gmail.com-'
+        assert v.ValidateEmail(email) == False
+
+        email = 'joaopaulo@gmail.com@'
+        assert v.ValidateEmail(email) == False
+
+        email = 'joaopaulo@gmail.com--'
+        assert v.ValidateEmail(email) == False
+
+        email = 'joaopaulo@gmail.com '
+        assert v.ValidateEmail(email) == False
+
+    def test_email_com_2subdominio():
+        #Teste se e-mails muito curtos são capturados adequadamente
+        v = ValidateEmail
+        email = 'joaopaulo@gmail.com'
+        assert v.ValidateEmail(email) == False
+
+    def test_email_com_espaco_subdominio():
+        #Os subdomínios não podem conter espaços, mesmo que entre aspas.
+        v = ValidateEmail
+        email = 'joaopaulo@minha empresa.com'
+        assert v.ValidateEmail(email) == False
+
+        email = 'joaopaulo@"minha empresa".com'
+        assert v.ValidateEmail(email) == False
+    def test_emails_validos_hifen():
+        v = ValidateEmail
+        email = 'joao-paulo@gmail.com'
+        assert v.ValidateEmail(email) == True
+
+        email = 'joao--paulo@gmail.com'
+        assert v.ValidateEmail(email) == True
+
+        email = 'joaopaulo@minha-empresa.com'
+        assert v.ValidateEmail(email) == True
+
+        email = 'joaopaulo@minha--empresa.com'
+        assert v.ValidateEmail(email) == True
+    
+    def test_emails_validos_Underscored():
+        v = ValidateEmail
+        #
+        #vários casos de teste com sublinhados que enganam alguns validadores. Algumas válidas, outras não.
+        #
+        
+        email = 'joao_paulo@gmail.com'
+        assert v.ValidateEmail(email) == True
+
+        email = 'joao_@gmail.com'
+        assert v.ValidateEmail(email) == True
+
+        email = 'joaopaulo@minha_empresa.com'
+        assert v.ValidateEmail(email) == False
+
+    def test_formatos_invalidos():
+        v = ValidateEmail
+
+        email = 'joao paulo gmail com'
+        assert v.ValidateEmail(email) == False
+
+        email = 'joaopaulo#gmail.com'
+        assert v.ValidateEmail(email) == False
+    """
