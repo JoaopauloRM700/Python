@@ -35,10 +35,6 @@ class TestCpf(object):
         cpf = '034.974.76285'
         assert v.validatecpf(cpf) == False
 
-    def test_numeros_sequenciais(self):
-        v = ValidateCPF
-        cpf = '123.456.789-10'
-        assert v.validatecpf(cpf) == False
 
     def test_menos_de_11_num(self):
         v = ValidateCPF
